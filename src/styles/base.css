@@ -1,0 +1,56 @@
+:root {
+  --deck-bg: #111315;
+  --deck-surface: #1a1e21;
+  --deck-surface-2: #21272b;
+  --deck-text: #f5efe1;
+  --deck-muted: rgba(245, 239, 225, 0.7);
+  --deck-faint: rgba(245, 239, 225, 0.45);
+  --deck-accent: #56d39b;
+  --deck-accent-2: #74a7ff;
+  --deck-warn: #eb7f67;
+  --deck-line: rgba(245, 239, 225, 0.14);
+  --deck-line-strong: rgba(245, 239, 225, 0.28);
+  --deck-code: #0f1214;
+  --deck-radius: 18px;
+  --deck-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  --deck-font-body: "Hanken Grotesk", system-ui, sans-serif;
+  --deck-font-display: "Caveat", "Georgia", serif;
+  --deck-font-mono: "JetBrains Mono", monospace;
+  --slide-pad: clamp(1.8rem, 4vw, 4rem);
+  --slide-gap: 1.2rem;
+  --slide-title-size: clamp(2.8rem, 7vw, 5.8rem);
+  --slide-subtitle-size: clamp(1.8rem, 4vw, 3.2rem);
+  --slide-body-size: clamp(1rem, 1.55vw, 1.3rem);
+  --slide-ease: 280ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+html,
+body {
+  overflow: hidden;
+  background: var(--deck-bg);
+  color: var(--deck-text);
+  font-family: var(--deck-font-body);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+code,
+pre {
+  font-family: var(--deck-font-mono);
+}
