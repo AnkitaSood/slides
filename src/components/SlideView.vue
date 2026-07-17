@@ -74,6 +74,7 @@ const slideClasses = computed(() => [
   font-size: var(--slide-title-size);
   line-height: 0.95;
   letter-spacing: 0.01em;
+  white-space: pre-line;
 }
 
 .body {
@@ -125,7 +126,7 @@ const slideClasses = computed(() => [
 }
 
 .active .body {
-  animation: easeIn calc(var(--slide-ease) + 80ms) both;
+  animation: easeIn calc(var(--slide-duration) + 80ms) var(--slide-timing-function) both;
   animation-delay: 70ms;
 }
 

@@ -19,3 +19,184 @@
   --deck-font-display: "Caveat", cursive;
   --deck-font-mono: "JetBrains Mono", monospace;
 }
+
+/* Profile Slide Grid Layout */
+.deck .slide.profile-slide.layout-two-column .slide-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  align-content: center;
+  align-items: start;
+  gap: 1rem 2.5rem;
+  height: 100%;
+}
+
+.deck .slide.profile-slide .title {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--deck-font-body);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  color: var(--deck-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.deck .slide.profile-slide .eyebrow {
+  grid-column: 1;
+  grid-row: 2;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: var(--deck-font-body);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--deck-accent-2);
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.deck .slide.profile-slide .body {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 0;
+}
+
+.deck .slide.profile-slide .body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deck .slide.profile-slide .body li {
+  position: relative;
+  padding-left: 2.8rem;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-family: var(--deck-font-mono);
+  color: var(--deck-muted);
+  display: flex;
+  align-items: center;
+  min-height: 2rem;
+}
+
+/* Social Icons */
+.deck .slide.profile-slide .body li::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.6rem;
+  height: 1.6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 1. Home Icon */
+.deck .slide.profile-slide .body li:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2335d39a'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E");
+}
+
+/* 2. LinkedIn Icon */
+.deck .slide.profile-slide .body li:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2335d39a'%3E%3Cpath d='M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z'/%3E%3C/svg%3E");
+}
+
+/* 3. YouTube Icon */
+.deck .slide.profile-slide .body li:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2335d39a'%3E%3Cpath d='M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E");
+}
+
+/* 4. Bluesky Icon */
+.deck .slide.profile-slide .body li:nth-child(4)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2335d39a'%3E%3Cpath d='M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948'/%3E%3C/svg%3E");
+}
+
+/* 5. Twitter/X Icon */
+.deck .slide.profile-slide .body li:nth-child(5)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2335d39a'%3E%3Cpath d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/%3E%3C/svg%3E");
+}
+
+/* Blocks / Right Column */
+.deck .slide.profile-slide .block-stack {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.deck .slide.profile-slide .block-text {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  width: auto;
+}
+
+.deck .slide.profile-slide .block-text .markdown p {
+  margin: 0;
+}
+
+.deck .slide.profile-slide .block-text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ankita's Photo styling */
+.deck .slide.profile-slide .block-stack>div:first-child img {
+  max-height: clamp(260px, 45vh, 380px);
+  border-radius: 12px;
+  border: 4px solid var(--deck-surface-2);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+
+/* GDE Badge styling */
+.deck .slide.profile-slide .block-stack>div:last-child img {
+  max-height: clamp(160px, 25vh, 220px);
+  border-radius: 12px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Intro Slide Custom Layout */
+.deck .slide.intro-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.deck .slide.intro-slide .body {
+  margin-top: 1.5rem;
+  max-width: 100%;
+}
+
+.deck .slide.intro-slide .body img {
+  max-height: clamp(200px, 45vh, 350px);
+  width: auto;
+  border-radius: 16px;
+  background: radial-gradient(circle, rgba(53, 211, 154, 0.12) 0%, transparent 70%);
+  padding: 0.5rem;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s var(--slide-timing-function);
+}
+
+.deck .slide.intro-slide .body img:hover {
+  transform: scale(1.03);
+}

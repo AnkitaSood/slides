@@ -143,10 +143,13 @@ function handleDeckClick(event) {
 }
 
 function injectTheme(css) {
-  const style = document.createElement('style');
-  style.setAttribute('data-deck-theme', 'true');
+  let style = document.querySelector('style[data-deck-theme="true"]');
+  if (!style) {
+    style = document.createElement('style');
+    style.setAttribute('data-deck-theme', 'true');
+    document.head.appendChild(style);
+  }
   style.textContent = css;
-  document.head.appendChild(style);
 }
 
 function renderNotesDocument() {
