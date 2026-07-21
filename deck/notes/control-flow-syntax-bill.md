@@ -1,0 +1,1 @@
+Several companies have reported improvements in their performance metrics.

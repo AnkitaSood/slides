@@ -5,7 +5,7 @@
     class="app-shell"
   >
     <template v-if="!isPresenter">
-      <div id="deck" class="deck" @click="handleDeckClick">
+      <div id="deck" class="deck">
         <SlideView
           v-for="slide in slides"
           :key="slide.id"
@@ -13,7 +13,12 @@
           :active="slide.order === currentIndex"
         />
       </div>
-      <DeckChrome :current="currentIndex" :total="slides.length" />
+      <DeckChrome
+        :current="currentIndex"
+        :total="slides.length"
+        @prev="prev"
+        @next="next"
+      />
       <NotesDrawer
         :open="notesOpen"
         :title="currentSlide.title"
@@ -133,14 +138,6 @@ function handleKeydown(event) {
   }
 }
 
-function handleDeckClick(event) {
-  if (notesOpen.value) {
-    const drawer = document.querySelector('.notes-drawer');
-    if (drawer?.contains(event.target)) return;
-  }
-  if (event.clientX / window.innerWidth > 0.5) next();
-  else prev();
-}
 
 function injectTheme(css) {
   let style = document.querySelector('style[data-deck-theme="true"]');

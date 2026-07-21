@@ -1,8 +1,10 @@
 <template>
   <section class="slide" :class="slideClasses">
     <div class="slide-inner">
-      <div v-if="slide.eyebrow" class="eyebrow">{{ slide.eyebrow }}</div>
-      <h1 v-if="slide.title" class="title">{{ slide.title }}</h1>
+      <header v-if="slide.eyebrow || slide.title" class="slide-header">
+        <div v-if="slide.eyebrow" class="eyebrow">{{ slide.eyebrow }}</div>
+        <h1 v-if="slide.title" class="title">{{ slide.title }}</h1>
+      </header>
       <div v-if="slide.bodyHtml" class="body markdown animate-item" v-html="slide.bodyHtml"></div>
       <div class="block-stack">
         <div
@@ -60,7 +62,7 @@ const slideClasses = computed(() => [
 }
 
 .eyebrow {
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   color: var(--deck-accent);
   font-size: 0.84rem;
   font-weight: 700;
@@ -98,8 +100,7 @@ const slideClasses = computed(() => [
   align-content: center;
 }
 
-.layout-two-column .title,
-.layout-two-column .eyebrow,
+.layout-two-column .slide-header,
 .layout-two-column .body {
   grid-column: 1;
 }

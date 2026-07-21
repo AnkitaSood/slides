@@ -10,7 +10,9 @@
       <div class="eyebrow">Next Slide Preview</div>
       <div class="preview-card">
         <div class="preview-title">{{ nextSlide?.title ?? 'End of deck' }}</div>
-        <div class="preview-body" v-if="nextSlide" v-html="nextSlide.bodyHtml"></div>
+        <div class="preview-body" v-if="nextSlide">
+          <div class="notes markdown" v-html="nextSlide.notesHtml"></div>
+        </div>
         <div v-else class="preview-body">No next slide.</div>
       </div>
     </section>

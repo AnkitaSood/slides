@@ -161,15 +161,22 @@ function renderMarkdownInline(content) {
   border-radius: var(--deck-radius);
   background: color-mix(in srgb, var(--deck-surface) 88%, black);
   box-shadow: var(--deck-shadow);
+  overflow: hidden;
 }
 
 .callout {
   padding: 1rem 1.1rem;
 }
 
-.callout-title,
-.code-title {
+.callout-title {
   margin-bottom: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--deck-text);
+}
+
+.code-title {
+  padding: 0.85rem 1.1rem 0.45rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--deck-text);
@@ -192,6 +199,10 @@ pre {
   color: var(--deck-text);
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.code-title + pre {
+  padding-top: 0.5rem;
 }
 
 table {
