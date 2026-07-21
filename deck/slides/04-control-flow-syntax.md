@@ -13,9 +13,17 @@ blocks:
       - ["`*ngIf`", "`@if`"]
       - ["`*ngSwitch`", "`@switch`"]
   - type: code
-    title: Code Example
+    title: if/ else
     code: |
-      @for (user of users(); track user.id) {
-        <p>{{ user.name }}</p>
+      @if (status() === 'running') {
+        <app-button type="button" variant="secondary" (click)="cancel()">Stop</app-button>
+      } @else {
+        <app-button type="submit" [disabled]="!draft().trim()">Send</app-button>
+      }
+  - type: code
+    title: for
+    code: |
+      @for (s of speciesOptions(); track s) {
+        <option [value]="s">{{ s }}</option>
       }
 ---

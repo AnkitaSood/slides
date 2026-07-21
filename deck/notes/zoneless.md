@@ -1,28 +1,12 @@
 ---
 slide: zoneless
 ---
+Open with precision: zoneless became the default in Angular v21, so every v22 app starts there unless it opts back into Zone-based change detection.
 
-Angular historically relied on **Zone.js** — a library that monkey-patched every async API in the browser (setTimeout, Promises, XHR, fetch) just so Angular could know *when* something might have changed and trigger a re-render of the whole component tree. It worked, but it was expensive and invisible.
+Zone.js patched browser async APIs because Angular needed a hint that state might have changed. The hint was broad: async work could trigger synchronization even when application state stayed the same.
 
-Going **zoneless** means Angular drops that dependency entirely. UI updates are now driven by **Signals** — a reactive primitive that tracks exactly which parts of the UI depend on which pieces of state. Only those parts re-render when state changes.
+Now Angular relies on explicit notifications such as a signal written after each SSE token. That reduces unnecessary synchronization, removes Zone.js payload/startup overhead, and makes async debugging easier.
 
-Zone.js was security cameras watching every door in the house, just in case. Zoneless with Signals is motion sensors — only the room that actually moved gets a notification.
+Do not claim Angular renders a single text node. The accurate claim is that signal writes notify Angular which consuming views need attention.
 
----
-
-## Why this matters for AI applications specifically
-
-AI APIs (Gemini, OpenAI, etc.) stream responses as **Server-Sent Events** — hundreds of token chunks per second. With Zone.js, every chunk could trigger a full change detection cycle across the component tree. That's an enormous, unnecessary cost.
-
-With zoneless + Signals:
-- Only the signal holding the streamed text gets updated
-- Only the template nodes bound to that signal re-render
-- Everything else stays untouched
-
-This makes AI chat UIs, live summarization, and copilot interfaces feel **smooth and responsive** rather than janky or CPU-heavy.
-
----
-
-## The big picture: Angular's AI journey
-
-Zoneless isn't just a performance tweak — it's a foundational shift that makes Angular's reactivity model **precise enough** to power real-time AI interfaces. Signals + zoneless is the combination that makes streaming UIs, live AI feedback loops, and reactive copilot experiences practical to build in Angular at scale.
+Reference: https://angular.dev/guide/zoneless

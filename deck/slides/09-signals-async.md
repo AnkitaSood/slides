@@ -1,0 +1,38 @@
+---
+id: signals-async
+title: Async state—not async spaghetti
+eyebrow: Resource · stable in Angular v22
+layout: two-column
+blocks:
+  - type: code
+    title: plushelter · AI roster search
+    code: |
+      searchResults = resource({
+        params: () => this.debouncedQuery.value()?.trim()
+          || undefined,
+        loader: async ({ params, abortSignal }) => {
+          const res = await fetch('/api/roster-search', {
+            method: 'POST',
+            body: JSON.stringify({ query: params }),
+            signal: abortSignal,
+          });
+          return res.json() as Promise<RosterSearchResult>;
+        },
+      });
+  - type: chips
+    items:
+      - label: reactive params
+        tone: accent
+      - label: stale work aborted
+        tone: success
+      - label: status is a signal
+        tone: success
+---
+`resource()` turns an async dependency into a reactive state machine.
+
+1. Signals produce the request params
+2. The loader runs
+3. Superseded work is cancelled
+4. Value, loading, and error settle together
+
+For AI search, the newest prompt wins. Race handling is part of the primitive.

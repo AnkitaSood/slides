@@ -23,18 +23,20 @@
 /* Profile Slide Grid Layout */
 .deck .slide.profile-slide.layout-two-column .slide-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   align-content: center;
-  align-items: start;
-  gap: 1rem 2.5rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+  row-gap: 1.2rem;
   height: 100%;
 }
 
 .deck .slide.profile-slide .slide-header {
   grid-column: 1;
   grid-row: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .deck .slide.profile-slide .title {
@@ -125,13 +127,12 @@
 /* Blocks / Right Column */
 .deck .slide.profile-slide .block-stack {
   grid-column: 2;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  height: 100%;
+  gap: .5rem;
 }
 
 .deck .slide.profile-slide .block-text {
