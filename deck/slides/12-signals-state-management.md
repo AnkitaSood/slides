@@ -1,37 +1,36 @@
 ---
 id: signals-state-management
 title: A store can stay boring
-eyebrow: Signal-based state management
+eyebrow: "@Service() · new in Angular v22"
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · session-scoped store
+    title: "admitted-animals-store.ts"
     code: |
       @Service()
       export class AdmittedAnimalsStore {
         private readonly _admitted = signal<Animal[]>([]);
         readonly admitted = this._admitted.asReadonly();
 
-        admit(animal: Animal) {
+        admit(animal: Animal): void {
           this._admitted.update(list => [...list, animal]);
         }
 
-        remove(id: Animal['id']) {
+        remove(animalId: Animal['id']): void {
           this._admitted.update(list =>
-            list.filter(animal => animal.id !== id)
+            list.filter(animal => animal.id !== animalId)
           );
         }
       }
-  - type: callout
-    tone: info
-    title: Scale by responsibility
-    body: Keep writes private, expose read-only signals, and derive views with `computed()`. Add a library only when the app needs its extra guarantees.
+  - type: chips
+    items:
+      - label: no @Injectable() boilerplate
+        tone: accent
+      - label: root singleton by default
+        tone: success
 ---
-The same service pattern can own:
+`@Service()` replaces `@Injectable()` for root-singleton services — this store is real plushelter code, unedited.
 
-- chat history
-- active token and context counts
-- selected model and tool policy
-- agent status and errors
+The same pattern can own chat history, active token counts, or agent status: keep writes private, expose read-only signals, derive views with `computed()`.
 
-Central state; targeted consumers; no event bus for every token.
+Central state, targeted consumers — no event bus for every token.

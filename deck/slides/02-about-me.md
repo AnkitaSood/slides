@@ -15,6 +15,6 @@ blocks:
 ---
 * Austin, Texas
 * SoodAnkita
-* AmplifyWithAnkita
+* AmplifyWithAnkita / WebVibesOnly
 * ankitasood.bsky.social
 * GuacamoleAnkita

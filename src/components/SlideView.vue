@@ -96,7 +96,7 @@ const slideClasses = computed(() => [
 .layout-two-column .slide-inner {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 2rem;
+  gap: 1.2rem 2rem;
   align-content: center;
 }
 
@@ -109,6 +109,20 @@ const slideClasses = computed(() => [
   grid-column: 2;
   align-content: center;
   margin-top: 0;
+}
+
+.layout-two-column .slide-inner:has(.block-chips) .block-stack {
+  display: contents;
+}
+
+.layout-two-column .block-stack > .animate-item:has(.block-chips) {
+  grid-column: 1;
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.layout-two-column .block-stack > .animate-item:not(:has(.block-chips)) {
+  grid-column: 2;
 }
 
 .animate-item {

@@ -6,8 +6,12 @@ layout: default
 blocks:
   - type: chips
     items:
-      - label: Standalone components only
-        tone: warn
+      - label: Improve Core Web Vitals
+        tone: success
+      - label: Shrink JS Payload
+        tone: accent
+      - label: Template-level lazy loading 
+        tone: success
   - type: code
     title: Code Example
     code: |

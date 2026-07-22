@@ -5,7 +5,7 @@ eyebrow: Signal Forms · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · one form for humans + agents
+    title: One form for humans and agents
     code: |
       model = signal<SurrenderRequest>(
         { ...EMPTY_SURRENDER_REQUEST }
@@ -36,9 +36,8 @@ blocks:
 ---
 Complex AI input is more than one textarea:
 
-- user prompt
-- system instructions
-- constraints and tool permissions
-- model options
+- structured fields, not free text
+- centralized validation
+- one submit contract
 
-Signal Forms keeps values, validation, and field state in one reactive graph. plushelter even derives an experimental WebMCP tool from that same contract.
+Signal Forms keeps values, validation, and field state in one reactive graph — plushelter even derives an experimental WebMCP tool from that same contract.

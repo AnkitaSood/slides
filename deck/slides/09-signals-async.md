@@ -5,7 +5,7 @@ eyebrow: Resource · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · AI roster search
+    title: AI roster search
     code: |
       searchResults = resource({
         params: () => this.debouncedQuery.value()?.trim()
@@ -30,9 +30,8 @@ blocks:
 ---
 `resource()` turns an async dependency into a reactive state machine.
 
-1. Signals produce the request params
-2. The loader runs
-3. Superseded work is cancelled
-4. Value, loading, and error settle together
+- Signals produce the request params
+- The loader runs, and stale requests are aborted automatically
+- Value, loading, and error settle together
 
-For AI search, the newest prompt wins. Race handling is part of the primitive.
+For AI search, the newest prompt wins — race handling is part of the primitive.

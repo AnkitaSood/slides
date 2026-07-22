@@ -5,25 +5,15 @@ eyebrow: resource() + httpResource()
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · reactive AI triage
+    title: "faq-store.ts"
     code: |
-      triageResource = httpResource<CaseFile>(() => {
-        const photo = this.uploadedPhoto();
-        if (!photo) return undefined;
-        return {
-          url: '/api/intake-triage',
-          method: 'POST',
-          body: { photoBase64: photo.base64 }
-        };
-      });
-
-      triageResource.isLoading();
-      triageResource.value();
-      triageResource.error();
-  - type: callout
-    tone: warning
-    title: Keep mutations explicit
-    body: Angular recommends `httpResource` for reactive reads. Use `HttpClient` or a `resource()` loader for state-changing POST/PUT work. An inference POST should behave like an idempotent read.
+      @Service()
+      export class FaqStore {
+        readonly faq = httpResource<FaqCategory[]>(
+          () => '/api/faq'
+        );
+      }
+      // faq.isLoading() / faq.value() / faq.error()
 ---
 | API | Best fit |
 |---|---|

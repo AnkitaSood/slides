@@ -15,7 +15,7 @@ blocks:
       - ["Recovering", "Preserve input + offer retry"]
       - ["Done", "Stabilize layout + restore focus"]
   - type: code
-    title: plushelter · status has controls
+    title: Status has controls
     code: |
       @if (status() === 'running') {
         <app-button (click)="cancel()">Stop</app-button>
@@ -27,10 +27,4 @@ blocks:
 ---
 An LLM can take seconds. Silence feels broken.
 
-- Stream into a stable container
-- Show agent/tool status in plain language
-- Give users a Stop action
-- Reserve space before content arrives
-- Keep partial work when recovery is possible
-
-Perceived performance is a state-design problem.
+Perceived performance is a state-design problem, not a spinner problem.

@@ -1,30 +1,14 @@
 ---
 id: zoneless
-title: Zoneless by default
-eyebrow: Angular v22 · Modern primitives
+title: Zoneless
+eyebrow: Angular's default since v21
 layout: two-column
 blocks:
-  - type: code
-    title: plushelter · every token is an explicit update
-    code: |
-      private appendToken(id: number, token: string) {
-        this._transcript.update(entries =>
-          entries.map(entry =>
-            entry.id === id
-              ? { ...entry, text: entry.text + token }
-              : entry
-          )
-        );
-      }
   - type: callout
     tone: info
-    title: AI payoff
-    body: A fast SSE stream no longer makes every patched async event a reason to synchronize the app. Signal writes tell Angular exactly when UI state changed.
+    title: Impact on Change Detection
+    body: Replaces global top-down checking with notification-driven updates. Angular re-evaluates only targeted consuming views when Signals or events emit.
 ---
-**Zone.js:** patch browser APIs, then check whether anything changed.
-
-**Zoneless:** render from explicit Angular notifications.
-
-- Default since v21; standard in v22
-- Less startup and payload overhead
-- Cleaner async stack traces
+- **No more Zone.js:** removes ~30–40 KB and its startup monkey-patching.
+- **Targeted updates:** Signals and events notify only the views that actually changed.
+- **Better responsiveness:** less main-thread work per async event, better INP.

@@ -1,9 +1,15 @@
 ---
 id: control-flow-syntax
 title: Control Flow Syntax
-eyebrow: Modern Angular
+eyebrow: Modern Angular · stable since v17
 layout: two-column
 blocks:
+  - type: chips
+    items:
+      - label: No manual imports
+        tone: success
+      - label: Reduced bundle size
+        tone: accent
   - type: table
     columns:
       - Before

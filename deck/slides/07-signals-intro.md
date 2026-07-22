@@ -1,11 +1,11 @@
 ---
 id: signals-intro
-title: Signals: state with a map
+title: Signals
 eyebrow: Fine-grained reactivity
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · agent state
+    title: Agent state
     code: |
       private readonly _transcript = signal<AgentEntry[]>([]);
       private readonly _status = signal<AgentStatus>('idle');
@@ -15,19 +15,11 @@ blocks:
 
       this._status.set('running');
       this._transcript.update(list => [...list, entry]);
-  - type: chips
-    items:
-      - label: read with ()
-        tone: accent
-      - label: set()
-        tone: success
-      - label: update()
-        tone: success
 ---
-A Signal is a value plus knowledge of **who reads it**.
+A reactive primitive that represents a value.
 
-- Synchronous current value
-- Dependencies tracked at the read site
-- No manual subscription for local UI state
+- Read it in a template, and Angular starts tracking it automatically
+- Change it, and only the parts of the page that use it update
+- No subscriptions to set up, and none to remember to clean up
 
-For AI: prompt, transcript, status, and token text stay predictable—even while the network is not.
+That's what makes a chat transcript that updates constantly easy to work with — the status badge and the growing reply update on their own, without wiring any of it by hand.

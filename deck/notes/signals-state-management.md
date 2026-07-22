@@ -1,11 +1,11 @@
 ---
 slide: signals-state-management
 ---
-Do not lead with a state library. Lead with ownership.
+Lead with `@Service()` itself — it's new in Angular v22 and most of the room hasn't seen it yet. It drops the `@Injectable({ providedIn: 'root' })` boilerplate for a root-singleton service.
 
-The plushelter store keeps mutation methods inside the service and exposes only `asReadonly()`. Components can derive filtered views without gaining permission to mutate shared state.
+Then widen to the pattern: mutation methods stay private, only `asReadonly()` is exposed. Components derive filtered views without gaining write access.
 
-Map the pattern to AI: one store can own transcript, model configuration, context budget, active run, and errors. Split stores when those responsibilities gain different lifetimes or persistence needs.
+Map to AI: one store can own transcript, model configuration, and active run state. Split stores only when lifetimes diverge.
 
-The point is maintainability: explicit write boundaries and targeted reactive reads.
+Reference: https://angular.dev/api/core/Service
 

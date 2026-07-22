@@ -5,7 +5,7 @@ eyebrow: Read · derive · synchronize · communicate
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · editable AI result
+    title: Editable AI result
     code: |
       triageResource = httpResource<CaseFile>(() => {
         const photo = this.uploadedPhoto();
@@ -24,15 +24,13 @@ blocks:
       intakeForm = form(this.caseFile);
   - type: callout
     tone: info
-    title: Why linkedSignal fits AI
+    title: linkedSignal() 🤝 AI
     body: A new model result resets the draft. Human edits remain writable until the upstream result changes again.
 ---
 | Primitive | Job |
 |---|---|
 | `signal()` | writable source |
-| `computed()` | read-only derivation |
 | `linkedSignal()` | derived **and** editable |
 | `effect()` | sync to non-reactive APIs |
-| `input()` / `output()` | component boundary |
 
-One mental model from model response to editable UI to child component.
+One mental model from model response to editable, human-correctable UI.

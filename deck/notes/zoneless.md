@@ -1,12 +1,10 @@
 ---
 slide: zoneless
 ---
-Open with precision: zoneless became the default in Angular v21, so every v22 app starts there unless it opts back into Zone-based change detection.
+Zoneless has been the default since v21 — don't oversell it as v22-new, but every app in this talk (including plushelter) runs on it.
 
-Zone.js patched browser async APIs because Angular needed a hint that state might have changed. The hint was broad: async work could trigger synchronization even when application state stayed the same.
+The AI tie-in: a fast SSE token stream used to make Zone.js re-check the whole component tree on every chunk. Zoneless means only the signal-consuming views update.
 
-Now Angular relies on explicit notifications such as a signal written after each SSE token. That reduces unnecessary synchronization, removes Zone.js payload/startup overhead, and makes async debugging easier.
-
-Do not claim Angular renders a single text node. The accurate claim is that signal writes notify Angular which consuming views need attention.
+plushelter has no `zone.js` dependency at all — not even a polyfill entry — which is the real-world shape of "zoneless by default."
 
 Reference: https://angular.dev/guide/zoneless

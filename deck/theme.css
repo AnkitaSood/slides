@@ -206,6 +206,16 @@
   object-fit: contain;
 }
 
+/* Callouts: bump body/title type size deck-wide for readability at conference resolution */
+.deck .callout-title {
+  font-size: 1.2rem;
+}
+
+.deck .callout .markdown {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
 /* Bill Image Overlay Slide */
 .deck .slide.bill-slide .block-stack {
   position: relative;

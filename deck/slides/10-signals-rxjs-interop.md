@@ -1,11 +1,11 @@
 ---
 id: signals-rxjs-interop
 title: Keep the RxJS pipeline
-eyebrow: Signals + RxJS interop
+eyebrow: rxResource · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
-    title: plushelter · SSE Observable → Resource
+    title: SSE Observable → Resource
     code: |
       chatStream = rxResource({
         params: () => this.pendingRequest(),

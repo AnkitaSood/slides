@@ -1,1 +1,8 @@
-Deferrable views, also known as @defer blocks, reduce the initial bundle size of your application by deferring the loading of code that is not strictly necessary for the initial rendering of a page. This often results in a faster initial load and improvement in Core Web Vitals (CWV), primarily Largest Contentful Paint (LCP) and Time to First Byte (TTFB).
+---
+slide: defer
+---
+`@defer` splits a component's code out of the initial bundle and loads it on a trigger — here, viewport visibility.
+
+Smaller initial payload means a faster first paint. Call out LCP and TTFB as the Core Web Vitals this most directly helps.
+
+It's stable since v17 — not a v22-only feature, but essential context before the async/signals sections.
