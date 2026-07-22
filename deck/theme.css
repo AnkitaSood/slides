@@ -13,11 +13,97 @@
   --deck-line: rgba(244, 236, 218, 0.12);
   --deck-line-strong: rgba(244, 236, 218, 0.28);
   --deck-code: #101417;
+  --code-ink: #f2eef2;
+  --code-comment: #8f8998;
+  --code-keyword: #ff719b;
+  --code-type: #a8dc76;
+  --code-function: #d7dd72;
+  --code-string: #ebcf72;
+  --code-number: #c7a0ff;
+  --code-property: #75d7df;
+  --code-variable: #ffae72;
   --deck-shadow: 0 26px 72px rgba(0, 0, 0, 0.42);
   --slide-gap: 1rem;
   --deck-font-body: "Hanken Grotesk", system-ui, sans-serif;
   --deck-font-display: "Caveat", cursive;
   --deck-font-mono: "JetBrains Mono", monospace;
+}
+
+/* Screenshot-inspired syntax palette, shared by block and fenced code. */
+.deck .code-wrap pre,
+.deck .markdown pre {
+  background: #28272d;
+  color: var(--code-ink);
+}
+
+.deck .hljs {
+  color: var(--code-ink);
+  background: transparent;
+}
+
+.deck .hljs-comment,
+.deck .hljs-quote {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+.deck .hljs-keyword,
+.deck .hljs-selector-tag,
+.deck .hljs-meta,
+.deck .hljs-template-tag {
+  color: var(--code-keyword);
+  font-style: italic;
+}
+
+.deck .hljs-type,
+.deck .hljs-built_in,
+.deck .hljs-class .hljs-title,
+.deck .hljs-title.class_ {
+  color: var(--code-type);
+}
+
+.deck .hljs-title,
+.deck .hljs-title.function_,
+.deck .hljs-function .hljs-title {
+  color: var(--code-function);
+}
+
+.deck .hljs-string,
+.deck .hljs-regexp,
+.deck .hljs-attribute,
+.deck .hljs-template-variable {
+  color: var(--code-string);
+}
+
+.deck .hljs-number,
+.deck .hljs-literal,
+.deck .hljs-symbol,
+.deck .hljs-bullet {
+  color: var(--code-number);
+}
+
+.deck .hljs-attr,
+.deck .hljs-property,
+.deck .hljs-selector-attr,
+.deck .hljs-selector-class {
+  color: var(--code-property);
+}
+
+.deck .hljs-variable,
+.deck .hljs-params,
+.deck .hljs-subst {
+  color: var(--code-variable);
+}
+
+.deck .hljs-tag,
+.deck .hljs-name,
+.deck .hljs-selector-id {
+  color: var(--code-keyword);
+}
+
+.deck .hljs-punctuation,
+.deck .hljs-operator {
+  color: var(--code-ink);
 }
 
 /* Profile Slide Grid Layout */
@@ -186,6 +272,25 @@
 .deck .slide.intro-slide .body {
   margin-top: 1.5rem;
   max-width: 100%;
+}
+
+/* Center Slide Custom Layout */
+.deck .slide.center-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.deck .slide.center-slide .body {
+  margin-top: 1.5rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .deck .slide.intro-slide .body img {

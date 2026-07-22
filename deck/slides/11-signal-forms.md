@@ -5,6 +5,7 @@ eyebrow: Signal Forms · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: One form for humans and agents
     code: |
       model = signal<SurrenderRequest>(

@@ -5,6 +5,7 @@ eyebrow: Resource · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: AI roster search
     code: |
       searchResults = resource({

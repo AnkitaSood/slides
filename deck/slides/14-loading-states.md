@@ -5,6 +5,7 @@ eyebrow: resource() + httpResource()
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: "faq-store.ts"
     code: |
       @Service()

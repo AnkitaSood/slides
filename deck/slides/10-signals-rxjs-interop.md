@@ -5,6 +5,7 @@ eyebrow: rxResource · stable in Angular v22
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: SSE Observable → Resource
     code: |
       chatStream = rxResource({

@@ -5,6 +5,7 @@ eyebrow: "WebMCP · experimental"
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: "app.config.ts"
     code: |
       providers: [
@@ -12,6 +13,7 @@ blocks:
         provideExperimentalWebMcpForms(),
       ],
   - type: code
+    language: typescript
     title: "surrender-flow.ts"
     code: |
       surrenderForm = form(this.model, f => {

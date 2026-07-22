@@ -13,6 +13,7 @@ blocks:
       - label: Template-level lazy loading 
         tone: success
   - type: code
+    language: angular
     title: Code Example
     code: |
       @defer (on viewport) {

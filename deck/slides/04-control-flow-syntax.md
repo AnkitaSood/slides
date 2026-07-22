@@ -19,6 +19,7 @@ blocks:
       - ["`*ngIf`", "`@if`"]
       - ["`*ngSwitch`", "`@switch`"]
   - type: code
+    language: angular
     title: if/ else
     code: |
       @if (status() === 'running') {
@@ -27,6 +28,7 @@ blocks:
         <app-button type="submit" [disabled]="!draft().trim()">Send</app-button>
       }
   - type: code
+    language: angular
     title: for
     code: |
       @for (s of speciesOptions(); track s) {

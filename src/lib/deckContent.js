@@ -1,9 +1,11 @@
 import MarkdownIt from 'markdown-it';
+import { highlightCode } from './highlightCode';
 
 const markdown = new MarkdownIt({
   html: false,
   linkify: true,
   typographer: true,
+  highlight: highlightCode,
 });
 
 const slideModules = import.meta.glob('/deck/slides/*.md', {

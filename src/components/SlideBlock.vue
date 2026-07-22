@@ -20,7 +20,7 @@
 
     <div v-else-if="block.type === 'code'" class="code-wrap">
       <div v-if="block.title" class="code-title">{{ block.title }}</div>
-      <pre><code>{{ block.code ?? '' }}</code></pre>
+      <pre><code class="hljs" v-html="renderCode(block.code ?? '', block.language)"></code></pre>
     </div>
 
     <div v-else-if="block.type === 'table'" class="table-wrap">
@@ -42,9 +42,15 @@
 
 <script setup>
 import MarkdownIt from 'markdown-it';
+import { highlightCode } from '../lib/highlightCode';
 
 const inlineMarkdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
-const blockMarkdown = new MarkdownIt({ html: false, linkify: true, typographer: true });
+const blockMarkdown = new MarkdownIt({
+  html: false,
+  linkify: true,
+  typographer: true,
+  highlight: highlightCode,
+});
 
 defineProps({
   block: { type: Object, required: true },
@@ -56,6 +62,10 @@ function renderMarkdown(content) {
 
 function renderMarkdownInline(content) {
   return inlineMarkdown.renderInline(content);
+}
+
+function renderCode(content, language) {
+  return highlightCode(content, language);
 }
 </script>
 

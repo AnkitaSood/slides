@@ -2,10 +2,13 @@
 id: modern-angular
 title: Modern Angular
 layout: default
+classes:
+  - center-slide
 ---
-- Modern primitives: control flow, `@defer`, zoneless
-- Signals: the reactive foundation
-- Async primitives — `resource()`, `httpResource()`, `rxResource()`
-- Signal Forms
-- State management with signals
-- AI interaction patterns and building with AI
+- Control flow, `@defer`
+- Signals
+  - Read-only/write/mixed signals
+  - Component specific signals (input(), viewChild(), viewContent())
+  - Synchronous/asynchronous signals
+  - Signals 🤝 RxJS
+- Zoneless

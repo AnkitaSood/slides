@@ -5,6 +5,7 @@ eyebrow: "Angular CLI MCP · Agent Skills"
 layout: two-column
 blocks:
   - type: code
+    language: bash
     title: "Angular MCP Server"
     code: |
       npx @angular/cli mcp

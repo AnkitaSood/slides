@@ -5,6 +5,7 @@ eyebrow: "@Service() · new in Angular v22"
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: "admitted-animals-store.ts"
     code: |
       @Service()

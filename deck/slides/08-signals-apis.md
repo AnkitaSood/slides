@@ -5,6 +5,7 @@ eyebrow: Read · derive · synchronize · communicate
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: Editable AI result
     code: |
       triageResource = httpResource<CaseFile>(() => {

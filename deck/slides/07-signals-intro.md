@@ -5,6 +5,7 @@ eyebrow: Fine-grained reactivity
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: Agent state
     code: |
       private readonly _transcript = signal<AgentEntry[]>([]);

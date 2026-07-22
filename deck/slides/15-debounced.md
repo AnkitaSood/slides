@@ -5,6 +5,7 @@ eyebrow: "debounced() · experimental in Angular v22"
 layout: two-column
 blocks:
   - type: code
+    language: typescript
     title: "roster.ts"
     code: |
       protected readonly searchQuery = signal('');

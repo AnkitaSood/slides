@@ -15,6 +15,7 @@ blocks:
       - ["Recovering", "Preserve input + offer retry"]
       - ["Done", "Stabilize layout + restore focus"]
   - type: code
+    language: angular
     title: Status has controls
     code: |
       @if (status() === 'running') {
