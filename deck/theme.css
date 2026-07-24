@@ -106,6 +106,10 @@
   color: var(--code-ink);
 }
 
+.deck pre {
+  font-size: 1.5rem;
+}
+
 /* Profile Slide Grid Layout */
 .deck .slide.profile-slide.layout-two-column .slide-inner {
   display: grid;
@@ -296,12 +300,7 @@
 .deck .slide.intro-slide .body img {
   max-height: clamp(200px, 45vh, 350px);
   width: auto;
-  border-radius: 16px;
-  background: radial-gradient(circle, rgba(53, 211, 154, 0.12) 0%, transparent 70%);
   padding: 0.5rem;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
   transition: transform 0.4s var(--slide-timing-function);
 }
 
@@ -344,3 +343,108 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   margin-inline-end: 5rem;
 }
+
+/* Control Flow Syntax Slide Layout */
+.deck .slide.control-flow-slide .slide-inner {
+  grid-auto-flow: dense;
+}
+
+.deck .slide.control-flow-slide .block-stack > .animate-item:has(.block-table),
+.deck .slide.control-flow-slide .block-stack > .animate-item:has(.table-wrap) {
+  grid-column: 1 !important;
+}
+
+/* Modern Angular 3-Grid Slide Layout */
+.deck .slide.modern-angular-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.deck .slide.modern-angular-slide .slide-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.deck .slide.modern-angular-slide .block-stack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 76rem;
+  margin-top: 1.2rem;
+}
+
+.deck .slide.modern-angular-slide .block-stack > .animate-item {
+  display: flex;
+}
+
+.deck .slide.modern-angular-slide .block-stack .block-callout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 16px;
+  padding: 1.5rem 1.4rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.deck .slide.modern-angular-slide .callout-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+.deck .slide.modern-angular-slide .callout{
+  padding: 0;
+  background: unset;
+  border: 0;
+  box-shadow: none;
+}
+.deck .slide.modern-angular-slide .callout .markdown {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.deck .slide.modern-angular-slide .callout .markdown ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.deck .slide.modern-angular-slide .callout .markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* Card 1: Templates (Blue / Cyan accent border) */
+.deck .slide.modern-angular-slide .tone-templates {
+  background: transparent;
+  border: 2px solid #68a7ff;
+}
+.deck .slide.modern-angular-slide .tone-templates .callout-title {
+  color: #68a7ff;
+  border-bottom-color: rgba(104, 167, 255, 0.3);
+}
+
+/* Card 2: Signals (Emerald / Green accent border) */
+.deck .slide.modern-angular-slide .tone-signals {
+  background: transparent;
+  border: 2px solid #35d39a;
+}
+.deck .slide.modern-angular-slide .tone-signals .callout-title {
+  color: #35d39a;
+  border-bottom-color: rgba(53, 211, 154, 0.3);
+}
+
+/* Card 3: Change Detection (Coral / Warm accent border) */
+.deck .slide.modern-angular-slide .tone-change-detection {
+  background: transparent;
+  border: 2px solid #ea7b61;
+}
+.deck .slide.modern-angular-slide .tone-change-detection .callout-title {
+  color: #ea7b61;
+  border-bottom-color: rgba(234, 123, 97, 0.3);
+}
+

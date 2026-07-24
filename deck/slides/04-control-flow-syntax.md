@@ -1,8 +1,10 @@
 ---
 id: control-flow-syntax
 title: Control Flow Syntax
-eyebrow: Modern Angular · stable since v17
+eyebrow: Modern Angular
 layout: two-column
+classes:
+  - control-flow-slide
 blocks:
   - type: chips
     items:

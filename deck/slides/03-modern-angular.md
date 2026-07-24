@@ -3,12 +3,28 @@ id: modern-angular
 title: Modern Angular
 layout: default
 classes:
-  - center-slide
+  - modern-angular-slide
+blocks:
+  - type: callout
+    tone: templates
+    title: Templates
+    body: |
+      - Built-in control flow (`@if`, `@for`, `@switch`)
+      - Deferrable views (`@defer`)
+      - `NgOptimizedImage` for preventing layout shifts
+  - type: callout
+    tone: signals
+    title: Signals
+    body: |
+      - Fine-grained reactivity model - sync and async apis.
+      - Component specific apis - inputs, models, queries.
+      - Signals 🤝 RxJS
+  - type: callout
+    tone: change-detection
+    title: Change Detection
+    body: |
+      - Zoneless + OnPush is the new default
+      - Notification-driven targeted updates
+      - Optimized runtime & bundle size
 ---
-- Control flow, `@defer`
-- Signals
-  - Read-only/write/mixed signals
-  - Component specific signals (input(), viewChild(), viewContent())
-  - Synchronous/asynchronous signals
-  - Signals 🤝 RxJS
-- Zoneless
+

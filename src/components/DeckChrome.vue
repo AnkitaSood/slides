@@ -1,6 +1,6 @@
 <template>
   <div class="deck-chrome">
-    <div class="hint">
+<!--    <div class="hint">
       <button type="button" class="kbd-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">←</button>
       <button type="button" class="kbd-btn" @click="$emit('next')" title="Next slide (→)" aria-label="Next slide">→</button>
       move
@@ -10,7 +10,7 @@
       <span>·</span>
       <kbd>F</kbd>
       fullscreen
-    </div>
+    </div>-->
     <div class="nav-controls">
       <button type="button" class="nav-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -41,7 +41,7 @@ defineEmits(['prev', 'next']);
   pointer-events: none;
 }
 
-.hint {
+/*.hint {
   position: fixed;
   bottom: 1rem;
   left: 1.2rem;
@@ -49,7 +49,7 @@ defineEmits(['prev', 'next']);
   font-size: 0.82rem;
   letter-spacing: 0.04em;
   pointer-events: auto;
-}
+}*/
 
 .nav-controls {
   position: fixed;

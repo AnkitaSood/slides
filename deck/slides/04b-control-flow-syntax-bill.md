@@ -5,8 +5,5 @@ eyebrow: Modern Angular
 layout: two-column
 classes:
   - bill-slide
-blocks:
-  - type: text
-    body: |
-      ![bill](/deck/assets/images/bill.png)
 ---
+![bill](/deck/assets/images/bill.png)
