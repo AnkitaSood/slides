@@ -11,7 +11,7 @@ blocks:
     body: |
       - Built-in control flow (`@if`, `@for`, `@switch`)
       - Deferrable views (`@defer`)
-      - `NgOptimizedImage` for preventing layout shifts
+      - `NgOptimizedImage` for preventing layout shifts.
   - type: callout
     tone: signals
     title: Signals
@@ -23,8 +23,14 @@ blocks:
     tone: change-detection
     title: Change Detection
     body: |
-      - Zoneless + OnPush is the new default
-      - Notification-driven targeted updates
-      - Optimized runtime & bundle size
+      - Zoneless + OnPush is the new default.
+      - Signal integration.
+      - "Smarter" dom traversal.
+  - type: callout
+    tone: ssr
+    title: SSR
+    body: |
+      - Seamless integration with `@defer`.
+      - Configurable rendering modes.
+      - Server-compatible components
 ---
-

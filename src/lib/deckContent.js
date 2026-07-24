@@ -92,21 +92,18 @@ function normalizeBlocks(blocks) {
 function parseFrontmatter(source) {
   const trimmed = source.replace(/^\uFEFF/, '');
 
-  if (!trimmed.startsWith('---\n')) {
+  if (!trimmed.startsWith('---\n') && !trimmed.startsWith('---\r\n')) {
     return { data: {}, content: trimmed };
   }
 
-  const endIndex = trimmed.indexOf('\n---\n', 4);
-  if (endIndex === -1) {
+  const match = trimmed.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/);
+  if (!match) {
     return { data: {}, content: trimmed };
   }
-
-  const rawFrontmatter = trimmed.slice(4, endIndex);
-  const content = trimmed.slice(endIndex + 5).trimStart();
 
   return {
-    data: parseYamlLikeObject(rawFrontmatter),
-    content,
+    data: parseYamlLikeObject(match[1]),
+    content: match[2].trimStart(),
   };
 }
 

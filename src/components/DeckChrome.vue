@@ -1,27 +1,27 @@
 <template>
-  <div class="deck-chrome">
-<!--    <div class="hint">
-      <button type="button" class="kbd-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">←</button>
-      <button type="button" class="kbd-btn" @click="$emit('next')" title="Next slide (→)" aria-label="Next slide">→</button>
-      move
-      <span>·</span>
-      <kbd>P</kbd>
-      presenter
-      <span>·</span>
-      <kbd>F</kbd>
-      fullscreen
-    </div>-->
-    <div class="nav-controls">
-      <button type="button" class="nav-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-      </button>
-<!--      <div class="counter">{{ current + 1 }} / {{ total }}</div>-->
-      <button type="button" class="nav-btn" @click="$emit('next')" title="Next slide (→)" aria-label="Next slide">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
-    </div>
-    <div class="progress" :style="{ width: `${((current + 1) / total) * 100}%` }"></div>
+  <!--     <div class="deck-chrome">
+   <div class="hint">
+        <button type="button" class="kbd-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">←</button>
+        <button type="button" class="kbd-btn" @click="$emit('next')" title="Next slide (→)" aria-label="Next slide">→</button>
+        move
+        <span>·</span>
+        <kbd>P</kbd>
+        presenter
+        <span>·</span>
+        <kbd>F</kbd>
+        fullscreen
+      </div>
+  </div>-->
+  <div class="nav-controls">
+    <button type="button" class="nav-btn" @click="$emit('prev')" title="Previous slide (←)" aria-label="Previous slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <!--      <div class="counter">{{ current + 1 }} / {{ total }}</div>-->
+    <button type="button" class="nav-btn" @click="$emit('next')" title="Next slide (→)" aria-label="Next slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
   </div>
+  <div class="progress" :style="{ width: `${((current + 1) / total) * 100}%` }"></div>
 </template>
 
 <script setup>
@@ -34,12 +34,7 @@ defineEmits(['prev', 'next']);
 </script>
 
 <style scoped>
-.deck-chrome {
-  position: fixed;
-  inset: auto 0 0 0;
-  z-index: 50;
-  pointer-events: none;
-}
+
 
 /*.hint {
   position: fixed;

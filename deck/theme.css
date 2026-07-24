@@ -278,6 +278,54 @@
   max-width: 100%;
 }
 
+/* Centered Full-Image Slide Layout */
+.deck .slide.agent-exp-slide .slide-inner,
+.deck .slide.center-image-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.deck .slide.agent-exp-slide .slide-header,
+.deck .slide.center-image-slide .slide-header {
+  display: none;
+}
+
+.deck .slide.agent-exp-slide .body,
+.deck .slide.center-image-slide .body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+}
+
+.deck .slide.agent-exp-slide .body p,
+.deck .slide.center-image-slide .body p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.deck .slide.agent-exp-slide .body img,
+.deck .slide.center-image-slide .body img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.deck .smooth-ai-slide p {
+  margin-bottom: 1.5rem;
+}
+
 /* Center Slide Custom Layout */
 .deck .slide.center-slide .slide-inner {
   display: flex;
@@ -370,10 +418,10 @@
 
 .deck .slide.modern-angular-slide .block-stack {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
   width: 100%;
-  max-width: 76rem;
+  max-width: 84rem;
   margin-top: 1.2rem;
 }
 
@@ -384,43 +432,53 @@
 .deck .slide.modern-angular-slide .block-stack .block-callout {
   display: flex;
   flex-direction: column;
+  width: 100%;
   height: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.deck .slide.modern-angular-slide .block-stack .callout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   border-radius: 16px;
-  padding: 1.5rem 1.4rem;
+  padding: 1.4rem 1.2rem;
   background: transparent;
   box-shadow: none;
 }
 
 .deck .slide.modern-angular-slide .callout-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
 }
-.deck .slide.modern-angular-slide .callout{
-  padding: 0;
-  background: unset;
-  border: 0;
-  box-shadow: none;
-}
+
 .deck .slide.modern-angular-slide .callout .markdown {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 .deck .slide.modern-angular-slide .callout .markdown ul {
-  padding-left: 1.2rem;
+  padding-left: 1.1rem;
   margin: 0;
 }
 
 .deck .slide.modern-angular-slide .callout .markdown li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.45rem;
 }
 
 /* Card 1: Templates (Blue / Cyan accent border) */
 .deck .slide.modern-angular-slide .tone-templates {
+  border: none;
   background: transparent;
+}
+.deck .slide.modern-angular-slide .tone-templates .callout {
   border: 2px solid #68a7ff;
 }
 .deck .slide.modern-angular-slide .tone-templates .callout-title {
@@ -430,7 +488,10 @@
 
 /* Card 2: Signals (Emerald / Green accent border) */
 .deck .slide.modern-angular-slide .tone-signals {
+  border: none;
   background: transparent;
+}
+.deck .slide.modern-angular-slide .tone-signals .callout {
   border: 2px solid #35d39a;
 }
 .deck .slide.modern-angular-slide .tone-signals .callout-title {
@@ -440,11 +501,452 @@
 
 /* Card 3: Change Detection (Coral / Warm accent border) */
 .deck .slide.modern-angular-slide .tone-change-detection {
+  border: none;
   background: transparent;
+}
+.deck .slide.modern-angular-slide .tone-change-detection .callout {
   border: 2px solid #ea7b61;
 }
 .deck .slide.modern-angular-slide .tone-change-detection .callout-title {
   color: #ea7b61;
   border-bottom-color: rgba(234, 123, 97, 0.3);
 }
+
+/* Card 4: SSR (Purple / Lavender accent border) */
+.deck .slide.modern-angular-slide .tone-ssr {
+  border: none;
+  background: transparent;
+}
+.deck .slide.modern-angular-slide .tone-ssr .callout {
+  border: 2px solid #c7a0ff;
+}
+.deck .slide.modern-angular-slide .tone-ssr .callout-title {
+  color: #c7a0ff;
+  border-bottom-color: rgba(199, 160, 255, 0.3);
+}
+
+/* Signals Intro Slide Layout */
+.deck .slide.signals-intro-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.deck .slide.signals-intro-slide .slide-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.deck .slide.signals-intro-slide .block-stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 78rem;
+  margin-top: 0.5rem;
+}
+
+.deck .slide.signals-intro-slide .block-stack > .animate-item {
+  display: flex;
+}
+
+.deck .slide.signals-intro-slide .block-stack .block-callout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.deck .slide.signals-intro-slide .block-stack .callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.85rem 0.75rem;
+  border-radius: 12px;
+  background: transparent;
+  text-align: center;
+  box-shadow: none;
+  border: 2px solid var(--deck-accent);
+}
+
+.deck .slide.signals-intro-slide .callout-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--deck-font-mono);
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* Signals Highlight Slide Styling */
+.deck .slide.signals-highlight-slide .tone-blurred {
+  opacity: 0.22;
+  filter: blur(5px);
+  pointer-events: none;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.deck .slide.signals-highlight-slide .tone-highlighted {
+  opacity: 1;
+  filter: none;
+  z-index: 2;
+}
+
+.deck .slide.signals-highlight-slide .tone-highlighted .callout {
+  border: 2px solid var(--deck-accent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--deck-accent) 50%, transparent);
+}
+
+.deck .slide.signals-highlight-slide .tone-highlighted .callout-title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Infusing AI in Templates 3-Grid Slide Layout */
+.deck .slide.infusing-ai-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.deck .slide.infusing-ai-slide .slide-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.deck .slide.infusing-ai-slide .block-stack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 82rem;
+  margin-top: 1rem;
+}
+
+.deck .slide.infusing-ai-slide .block-stack > .animate-item {
+  display: flex;
+}
+
+.deck .slide.infusing-ai-slide .block-stack .block-callout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.deck .slide.infusing-ai-slide .block-stack .callout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  background: color-mix(in srgb, var(--deck-surface) 92%, black);
+  box-shadow: none;
+  border: 1px solid var(--deck-line-strong);
+}
+
+/* Card Badges / Icons */
+.deck .slide.infusing-ai-slide .callout::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.deck .slide.infusing-ai-slide .tone-structured-data .callout {
+  border: 1.5px solid color-mix(in srgb, var(--deck-accent-2) 40%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .tone-structured-data .callout::before {
+  content: '</>';
+  font-family: var(--deck-font-mono);
+  color: var(--deck-accent-2);
+  background: color-mix(in srgb, var(--deck-accent-2) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--deck-accent-2) 30%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .tone-reactive-state .callout {
+  border: 1.5px solid color-mix(in srgb, var(--deck-accent) 40%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .tone-reactive-state .callout::before {
+  content: '⚡';
+  color: var(--deck-accent);
+  background: color-mix(in srgb, var(--deck-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--deck-accent) 30%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .tone-ai-use-cases .callout {
+  border: 1.5px solid color-mix(in srgb, var(--deck-warn) 40%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .tone-ai-use-cases .callout::before {
+  content: '↺';
+  color: var(--deck-warn);
+  background: color-mix(in srgb, var(--deck-warn) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--deck-warn) 30%, transparent);
+}
+
+.deck .slide.infusing-ai-slide .callout-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--deck-text);
+}
+
+.deck .slide.infusing-ai-slide .callout .markdown {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--deck-muted);
+}
+
+/* Smooth AI, Happy Users Slide Layout */
+.deck .slide.smooth-ai-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: clamp(2rem, 4vw, 4rem);
+  padding-right: clamp(2rem, 4vw, 4rem);
+}
+
+.deck .slide.smooth-ai-slide .title {
+  font-family: var(--deck-font-body);
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--deck-text);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.deck .slide.smooth-ai-slide .block-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 76rem;
+  margin-top: 1.2rem;
+}
+
+.deck .slide.smooth-ai-slide .block-stack > .animate-item {
+  display: flex;
+  width: 100%;
+}
+
+.deck .slide.smooth-ai-slide .block-stack .block-callout {
+  width: 100%;
+  display: flex;
+}
+
+.deck .slide.smooth-ai-slide .block-stack .callout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 1.2rem;
+  row-gap: 0.3rem;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--deck-surface) 90%, black);
+  border: 1px solid var(--deck-line-strong);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.deck .slide.smooth-ai-slide .callout::before {
+  content: '';
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--deck-accent-2) 14%, #0f172a);
+  border: 1px solid color-mix(in srgb, var(--deck-accent-2) 30%, transparent);
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.deck .slide.smooth-ai-slide .callout-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--deck-font-body);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.deck .slide.smooth-ai-slide .callout .markdown {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--deck-font-body);
+  font-size: 1.02rem;
+  color: var(--deck-muted);
+  line-height: 1.4;
+}
+
+.deck .slide.smooth-ai-slide .callout .markdown p {
+  margin: 0;
+}
+
+/* Icons for each tone matching the image */
+.deck .slide.smooth-ai-slide .tone-scoped-loading .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='22' y1='12' x2='18' y2='12'/%3E%3Cline x1='6' y1='12' x2='2' y2='12'/%3E%3Cline x1='12' y1='6' x2='12' y2='2'/%3E%3Cline x1='12' y1='22' x2='12' y2='18'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+}
+
+.deck .slide.smooth-ai-slide .tone-ssr-hydration .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='8' rx='2' ry='2'/%3E%3Crect x='2' y='14' width='20' height='8' rx='2' ry='2'/%3E%3Cline x1='6' y1='6' x2='6.01' y2='6'/%3E%3Cline x1='6' y1='18' x2='6.01' y2='18'/%3E%3C/svg%3E");
+}
+
+.deck .slide.smooth-ai-slide .tone-loading-states .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12a9 9 0 1 1-6.219-8.56'/%3E%3C/svg%3E");
+}
+
+.deck .slide.smooth-ai-slide .tone-one-click-retries .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='23 4 23 10 17 10'/%3E%3Cpath d='M20.49 15a9 9 0 1 1-2.12-9.36L23 10'/%3E%3C/svg%3E");
+}
+
+/* WebMCP Slide Layout */
+.deck .slide.webmcp-slide .slide-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-left: clamp(2rem, 4vw, 4rem);
+  padding-right: clamp(2rem, 4vw, 4rem);
+}
+
+.deck .slide.webmcp-slide .title {
+  font-family: var(--deck-font-body);
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  color: var(--deck-text);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.deck .slide.webmcp-slide .eyebrow {
+  color: var(--deck-accent);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.deck .slide.webmcp-slide .block-stack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 82rem;
+  margin-top: 1.4rem;
+}
+
+.deck .slide.webmcp-slide .block-stack > .animate-item {
+  display: flex;
+  width: 100%;
+}
+
+.deck .slide.webmcp-slide .block-stack .block-callout {
+  width: 100%;
+  display: flex;
+}
+
+.deck .slide.webmcp-slide .block-stack .callout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 1.1rem;
+  row-gap: 0.3rem;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 1.4rem 1.2rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--deck-surface) 90%, black);
+  border: 1px solid var(--deck-line-strong);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.deck .slide.webmcp-slide .callout::before {
+  content: '';
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--deck-accent-2) 14%, #0f172a);
+  border: 1px solid color-mix(in srgb, var(--deck-accent-2) 30%, transparent);
+  background-size: 1.5rem 1.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.deck .slide.webmcp-slide .callout-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--deck-font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--deck-text);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.deck .slide.webmcp-slide .callout .markdown {
+  grid-column: 2;
+  grid-row: 2;
+  font-family: var(--deck-font-body);
+  font-size: 1rem;
+  color: var(--deck-muted);
+  line-height: 1.45;
+}
+
+.deck .slide.webmcp-slide .callout .markdown p {
+  margin: 0;
+}
+
+.deck .slide.webmcp-slide .tone-standardized-capabilities .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2368a7ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z'/%3E%3Cpath d='M2 17l10 5 10-5'/%3E%3Cpath d='M2 12l10 5 10-5'/%3E%3C/svg%3E");
+}
+
+.deck .slide.webmcp-slide .tone-angular-native-integration .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2368a7ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E");
+}
+
+.deck .slide.webmcp-slide .tone-external-execution .callout::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2368a7ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='2' width='6' height='6' rx='1'/%3E%3Crect x='16' y='16' width='6' height='6' rx='1'/%3E%3Crect x='2' y='16' width='6' height='6' rx='1'/%3E%3Cpath d='M12 8v4'/%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M5 12v4'/%3E%3Cpath d='M19 12v4'/%3E%3C/svg%3E");
+}
+
+
+
+
+
 

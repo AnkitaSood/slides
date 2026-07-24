@@ -21,7 +21,7 @@ blocks:
       } @loading (after 100ms; minimum 1s){
         <img alt="loading..." src="loading.gif" />
       } @placeholder {
-        <p>Placeholder content</p>
+        <p>Large comp loads when this comes in view</p>
       }
       @error {
         <p>Failed to load large component.</p>
